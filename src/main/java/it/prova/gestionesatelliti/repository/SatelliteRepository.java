@@ -11,5 +11,7 @@ import it.prova.gestionesatelliti.model.StatoSatellite;
 public interface SatelliteRepository extends CrudRepository<Satellite, Long> {
 	
 	List<Satellite> findAllByDataLancioLessThanAndStatoNot(Date data, StatoSatellite stato);
+	
+	List<Satellite> findAllByStatoLikeAndDataRientroIsNull(StatoSatellite stato);
 
 }

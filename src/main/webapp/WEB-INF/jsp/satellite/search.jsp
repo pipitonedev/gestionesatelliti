@@ -95,7 +95,7 @@
 					</li>
 					<li>Cerca i satelliti disattivati ma non ancora rientrati
 					<a class="btn btn-outline-primary ml-2"
-						href="${pageContext.request.contextPath}/satellite/findyears"> Cerca</a></li>
+						href="${pageContext.request.contextPath}/satellite/disattivatononrientrato"> Cerca</a></li>
 					<li>Cerca satelliti rimasti in orbita per 10 anni ma che ora sono fissi
 					<a class="btn btn-outline-primary ml-2"
 						href="${pageContext.request.contextPath}/satellite/findyears"> Cerca</a></li>

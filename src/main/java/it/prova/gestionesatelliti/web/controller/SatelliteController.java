@@ -112,5 +112,12 @@ public class SatelliteController {
 		model.addAttribute("satellite_list_attribute", results);
 		return "satellite/listaricerche";
 	}
+	
+	@GetMapping("/disattivatononrientrato")
+	public String listByQuery2(Satellite example, ModelMap model) {
+		List<Satellite> results = satelliteService.cercaDisattivatiMaNonRientrati();
+		model.addAttribute("satellite_list_attribute", results);
+		return "satellite/listaricerche";
+	}
 
 }
