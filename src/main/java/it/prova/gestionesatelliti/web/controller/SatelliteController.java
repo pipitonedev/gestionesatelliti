@@ -80,7 +80,7 @@ public class SatelliteController {
 	}
 
 	@PostMapping("/aggiorna")
-	public String aggiorna(@ModelAttribute("update_satellite_attr") Satellite satellite, BindingResult result,
+	public String aggiorna(@Valid @ModelAttribute("update_satellite_attr") Satellite satellite, BindingResult result,
 			ModelMap model, RedirectAttributes redirectAttrs) {
 
 		if (result.hasErrors())
