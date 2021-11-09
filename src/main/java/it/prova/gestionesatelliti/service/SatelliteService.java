@@ -17,5 +17,7 @@ public interface SatelliteService {
 	public void rimuovi(Satellite satelliteInstance);
 	
 	public List<Satellite> findByExample(Satellite example);
+	
+	public List<Satellite> cercaLanciatiDaPiuDiDueAnniENonDisattivati();
 
 }

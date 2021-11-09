@@ -72,6 +72,8 @@
 								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/satellite/insert">Add New</a>
 								<input class="btn btn-outline-warning" type="reset" value="Ripulisci">
 							</div>
+							
+							
 		
 						</form>
   
@@ -80,7 +82,30 @@
 					<!-- end card-body -->			   
 				    </div>
 				<!-- end card -->
-				</div>		
+				</div>	
+				 <div class='card'>
+				    <div class='card-header'>
+				        <h5>Ricerca Elementi</h5>
+				        </div>
+				        <div>
+				<ul>
+					<br><li>Cerca i satelliti attivi lanciati da più di due anni
+						<a class="btn btn-outline-primary ml-2"
+						href="${pageContext.request.contextPath}/satellite/dueanniedisattivati"> Cerca</a>
+					</li>
+					<li>Cerca i satelliti disattivati ma non ancora rientrati
+					<a class="btn btn-outline-primary ml-2"
+						href="${pageContext.request.contextPath}/satellite/findyears"> Cerca</a></li>
+					<li>Cerca satelliti rimasti in orbita per 10 anni ma che ora sono fissi
+					<a class="btn btn-outline-primary ml-2"
+						href="${pageContext.request.contextPath}/satellite/findyears"> Cerca</a></li>
+				</ul>
+			</div>
+				       
+				
+				     
+
+				    		</div>	
 					  
 			    
 			  <!-- end container -->  
