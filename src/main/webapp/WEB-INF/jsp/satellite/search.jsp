@@ -31,7 +31,7 @@
 							<h6 class="card-title">I campi con <span class="text-danger">*</span> sono obbligatori</h6>
 		
 		
-							<form method="post" action="${pageContext.request.contextPath}/impiegato/list" class="row g-3" >
+							<form method="post" action="${pageContext.request.contextPath}/satellite/list" class="row g-3" >
 							
 							
 								<div class="col-md-6">
