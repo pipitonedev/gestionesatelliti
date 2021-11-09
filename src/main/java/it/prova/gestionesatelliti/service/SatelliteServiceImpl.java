@@ -115,4 +115,13 @@ public class SatelliteServiceImpl implements SatelliteService {
 		return repository.findAllByStatoLikeAndDataRientroIsNull(StatoSatellite.DISATTIVATO);
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public List<Satellite> cercaLanciatiDaDieciAnniEFissi() {
+		Date data = new Date();
+		data.setYear(data.getYear()-10);
+		return repository.findAllByDataLancioLessThanAndStatoEquals(data, StatoSatellite.FISSO);
+		
+	}
+
 }

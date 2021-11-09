@@ -119,5 +119,12 @@ public class SatelliteController {
 		model.addAttribute("satellite_list_attribute", results);
 		return "satellite/listaricerche";
 	}
+	
+	@GetMapping("/diecianni")
+	public String listByQuery3(Satellite example, ModelMap model) {
+		List<Satellite> results = satelliteService.cercaLanciatiDaDieciAnniEFissi();
+		model.addAttribute("satellite_list_attribute", results);
+		return "satellite/listaricerche";
+	}
 
 }
