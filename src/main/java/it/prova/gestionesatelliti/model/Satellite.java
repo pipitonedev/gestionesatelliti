@@ -30,7 +30,7 @@ public class Satellite {
 	@Column(name = "codice")
 	private String codice;
 
-	@NotBlank(message = "{dataLancio.notnull}")
+	@NotNull(message = "{dataLancio.notnull}")
 	@Column(name = "dataLancio")
 	private Date dataLancio;
 

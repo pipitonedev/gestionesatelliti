@@ -31,7 +31,7 @@ public class SatelliteController {
 	public ModelAndView listAll() {
 		ModelAndView mv = new ModelAndView();
 		List<Satellite> results = satelliteService.listAllElements();
-		mv.addObject("impiegato_list_attribute", results);
+		mv.addObject("satellite_list_attribute", results);
 		mv.setViewName("satellite/list");
 		return mv;
 	}
@@ -44,7 +44,7 @@ public class SatelliteController {
 	@PostMapping("/list")
 	public String listByExample(Satellite example, ModelMap model) {
 		List<Satellite> results = satelliteService.findByExample(example);
-		model.addAttribute("impiegato_list_attribute", results);
+		model.addAttribute("satellite_list_attribute", results);
 		return "satellite/list";
 	}
 
@@ -69,8 +69,27 @@ public class SatelliteController {
 
 	@GetMapping("/show/{idSatellite}")
 	public String show(@PathVariable(required = true) Long idSatellite, Model model) {
-		model.addAttribute("show_impiegato_attr", satelliteService.caricaSingoloElemento(idSatellite));
+		model.addAttribute("show_satellite_attr", satelliteService.caricaSingoloElemento(idSatellite));
 		return "satellite/show";
+	}
+
+	@GetMapping("/update/{idSatellite}")
+	public String update(@PathVariable(required = true) Long idSatellite, Model model) {
+		model.addAttribute("update_satellite_attr", satelliteService.caricaSingoloElemento(idSatellite));
+		return "satellite/update";
+	}
+
+	@PostMapping("/aggiorna")
+	public String aggiorna(@ModelAttribute("update_impiegato_attr") Satellite satellite, BindingResult result,
+			ModelMap model, RedirectAttributes redirectAttrs) {
+
+		if (result.hasErrors())
+			return "satellite/update";
+
+		satelliteService.aggiorna(satellite);
+
+		redirectAttrs.addFlashAttribute("successMessage", "Operazione eseguita correttamente");
+		return "redirect:/satellite";
 	}
 
 }
